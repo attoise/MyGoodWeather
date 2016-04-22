@@ -9,9 +9,9 @@ import android.widget.TextView;
 import android.widget.Button;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.content.Intent;
 
-
-public class MainActivity extends Activity implements OnClickListener {
+public class MainActivity extends  AppCompatActivity implements OnClickListener {
     TextView cityField, detailsField, currentTemperatureField, humidity_field, pressure_field, weatherIcon, updatedField;
     Button b_update, b_city;
 

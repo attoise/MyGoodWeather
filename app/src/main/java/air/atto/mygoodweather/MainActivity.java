@@ -15,6 +15,7 @@ public class MainActivity extends  AppCompatActivity implements OnClickListener 
     TextView cityField, detailsField, currentTemperatureField, humidity_field, pressure_field, weatherIcon, updatedField;
     Button b_update, b_city;
     TextView testV;
+    static String CityStatic;
 
     void Myfunc()
     {  setContentView(R.layout.activity_main);
@@ -58,9 +59,10 @@ public class MainActivity extends  AppCompatActivity implements OnClickListener 
 
         String MySCity= intent.getStringExtra("MySCity");
 
-
         testV.setText("Your name is: " + MySCity);
+        CityStatic=MySCity;
 
+       // Function().Method(String);
     }
 
     @Override

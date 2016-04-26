@@ -1,6 +1,7 @@
 package air.atto.mygoodweather;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.support.annotation.MainThread;
 import android.util.Log;
 
 import org.json.JSONException;
@@ -17,11 +18,9 @@ import java.util.Locale;
 
 public class Function {
 
-    String mycity="Tomsk";
+    String mycity=MainActivity.CityStatic;
 
-    String owmURL=  "http://api.openweathermap.org/data/2.5/weather?q="+mycity+",ru&lat=%s&lon=%s&units=metric";
-
-    private final String OPEN_WEATHER_MAP_URL = owmURL;
+    private final String OPEN_WEATHER_MAP_URL = "http://api.openweathermap.org/data/2.5/weather?q="+mycity+",ru&lat=%s&lon=%s&units=metric";
 
     private  final String OPEN_WEATHER_MAP_API = "596c1d05f600e8517a46e6ccbac7ebba";
 

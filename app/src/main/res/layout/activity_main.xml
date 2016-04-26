@@ -91,6 +91,7 @@
         android:textIsSelectable="false"
         android:layout_above="@+id/humidity_field"
         android:layout_alignParentLeft="true" />
+    ///////////
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -109,5 +110,14 @@
         android:id="@+id/b_city"
         android:layout_alignTop="@+id/b_update"
         android:layout_toEndOf="@+id/b_update" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/testV"
+        android:layout_alignBottom="@+id/weather_icon"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

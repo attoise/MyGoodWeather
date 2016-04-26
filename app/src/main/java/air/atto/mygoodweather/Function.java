@@ -1,4 +1,5 @@
 package air.atto.mygoodweather;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -13,14 +14,18 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+
 public class Function {
 
-    private static final String OPEN_WEATHER_MAP_URL =
-            "http://api.openweathermap.org/data/2.5/weather?q=Tomsk,ru&lat=%s&lon=%s&units=metric";
+    String mycity="Tomsk";
 
-    private static final String OPEN_WEATHER_MAP_API = "596c1d05f600e8517a46e6ccbac7ebba";
+    String owmURL=  "http://api.openweathermap.org/data/2.5/weather?q="+mycity+",ru&lat=%s&lon=%s&units=metric";
 
-    public static String setWeatherIcon(int actualId, long sunrise, long sunset){
+    private final String OPEN_WEATHER_MAP_URL = owmURL;
+
+    private  final String OPEN_WEATHER_MAP_API = "596c1d05f600e8517a46e6ccbac7ebba";
+
+    public  String setWeatherIcon(int actualId, long sunrise, long sunset){
         int id = actualId / 100;
         String icon = "";
         if(actualId == 800){
@@ -52,7 +57,7 @@ public class Function {
 
         void processFinish(String output1, String output2, String output3, String output4, String output5, String output6, String output7, String output8);
     }
-    public static class placeIdTask extends AsyncTask<String, Void, JSONObject> {
+    public class placeIdTask extends AsyncTask<String, Void, JSONObject> {
 
         public AsyncResponse delegate = null;
 
@@ -99,7 +104,7 @@ public class Function {
             }
         }
     }
-    public static JSONObject getWeatherJSON(String lat, String lon){
+    public JSONObject getWeatherJSON(String lat, String lon){
         try {
             URL url = new URL(String.format(OPEN_WEATHER_MAP_URL, lat, lon));
             HttpURLConnection connection =
